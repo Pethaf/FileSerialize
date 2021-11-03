@@ -32,7 +32,11 @@ namespace FileSerialize
         {
             foreach(Person thePerson in LOP)
             {
-
+                using(StreamWriter sw = new StreamWriter($"person_{thePerson.Id}.txt"))
+                {
+                    sw.Write($"{thePerson.Id}\n{thePerson.Name}\n{thePerson.Age}\n");
+                }
+                
             }
         }
     }
